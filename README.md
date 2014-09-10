@@ -1,4 +1,11 @@
-mbt
-===
+#mbt
+   
+### 框架  
+* spring mvc + mybatis + mysql  
+* DDD实践
 
-mybatis test
+### 目标  
+* 整合spring 和 mybatis 
+* 测试mybatis
+
+
