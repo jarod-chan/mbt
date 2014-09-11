@@ -9,4 +9,9 @@
 		(name) values(#{name})
 	</insert>
 	
+	<!-- 直接返回一个map数组 -->
+	<select id="all" resultType="map">
+		select * from author
+	</select>
+	
 </mapper>

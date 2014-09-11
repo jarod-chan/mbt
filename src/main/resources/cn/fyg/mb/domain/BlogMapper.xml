@@ -3,6 +3,30 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.fyg.mb.domain.BlogMapper">
+
+	<!--一对多查询  -->
+	<select id="find1_N" resultMap="map1_n" >
+	    select blog.id,blog.title,blog.context,post.id as post_id,post.subject as post_subject,tag.name as tag_name from blog
+	    left join post on blog.id=post.blog_id
+	    left join tag  on blog.id=tag.blog_id
+	</select>
+	<!--两个一对多   mybatis自动合并  -->
+	<resultMap type="Blog" id="map1_n">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="context" column="context" />
+		
+		<collection property="posts" ofType="Post">
+			<id property="id" column="post_id" />
+			<result property="subject" column="post_subject" />
+		</collection>
+		
+		<collection property="tags" ofType="Tag">
+			<id property="name" column="tag_name" />
+		</collection>
+		
+	</resultMap>
+	
 	
 	<!-- 关联查询 -->	
 	<select id="findWithAuthor" resultMap="blogWithAuthor" parameterType="int" >
@@ -33,7 +57,7 @@
     	select * from author where id=#{id}
     </select>
 
-
+	<!-- 集合也可以分布查询 -->
 	<select id="all2" resultMap="blogWithAuthor2" >
 		 select id,title,context,author_id from blog order by id
 	</select>

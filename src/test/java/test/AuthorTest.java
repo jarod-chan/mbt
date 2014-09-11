@@ -1,5 +1,8 @@
 package test;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,15 @@ public class AuthorTest {
 		author.setName("张三");
 		this.authorMapper.save(author);
 		H.p(author);
+	}
+	
+	@Test
+	public void all(){
+		List<Map<String,Object>> all = this.authorMapper.all();
+		for (Map<String,Object> map : all) {
+			H.ptl(map.get("id"));
+			H.ptl(map.get("name"));
+		}
 	}
 
 }

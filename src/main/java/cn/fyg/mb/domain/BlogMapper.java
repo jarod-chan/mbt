@@ -20,4 +20,6 @@ public interface BlogMapper {
 	Blog findWithAuthor2(int id);
 	
 	List<Blog> all2();
+	
+	List<Blog> find1_N();
 }

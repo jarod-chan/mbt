@@ -83,4 +83,12 @@ public class BlogTest {
 			H.p(blog);
 		}
 	}
+	
+	@Test
+	public void find1_N(){
+		List<Blog> find1_N = this.blogMapper.find1_N();
+		for (Blog blog : find1_N) {
+			H.p(blog);
+		}
+	}
 }
