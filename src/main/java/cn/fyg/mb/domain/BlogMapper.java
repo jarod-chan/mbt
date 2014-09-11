@@ -12,4 +12,12 @@ public interface BlogMapper {
 	void save(Blog blog);
 	
 	List<Blog> all();
+	
+	void update(Blog blog);
+	
+	Blog findWithAuthor(int id);
+	
+	Blog findWithAuthor2(int id);
+	
+	List<Blog> all2();
 }

@@ -10,9 +10,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import test.common.H;
+import cn.fyg.mb.domain.Author;
 import cn.fyg.mb.domain.Blog;
 import cn.fyg.mb.domain.BlogMapper;
 
+/**
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class BlogTest {
@@ -43,5 +47,40 @@ public class BlogTest {
 			H.p(blog);
 		}
 	}
-
+	
+	@Test
+	public void update(){
+		Blog blog= blogMapper.find(1);
+		if(blog!=null){
+			blog.setTitle("new title");
+			Author author=new Author();
+			author.setId(10);
+			blog.setAuthor(author);
+			blogMapper.update(blog);
+			H.p(blog);
+		}
+	}
+	
+	/*使用关联查询来获得关联属性*/
+	@Test
+	public void findWithAuthor(){
+		Blog blog= blogMapper.findWithAuthor(1);
+		H.p(blog);
+	}
+	
+	/*使用分布查询来获得关联对象*/
+	@Test
+	public void findWithAuthor2(){
+		Blog blog= blogMapper.findWithAuthor2(1);
+		H.p(blog);
+	}
+	
+	/*使用分布查询来获得对象集合*/
+	@Test
+	public void all2(){
+		List<Blog> blogs = this.blogMapper.all2();
+		for (Blog blog : blogs) {
+			H.p(blog);
+		}
+	}
 }

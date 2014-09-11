@@ -3,6 +3,41 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.fyg.mb.domain.BlogMapper">
+	
+	<!-- 关联查询 -->	
+	<select id="findWithAuthor" resultMap="blogWithAuthor" parameterType="int" >
+	    select blog.id,blog.title,blog.context,author.id  author_id,author.name from blog
+	    left join author on blog.author_id=author.id
+		where blog.id=#{id}
+	</select>
+
+	<resultMap id="blogWithAuthor" type="Blog">
+		<id property="id" column="id" />
+		<result property="title" column="title" />  
+		<result property="context" column="context" />  
+		<result property="create_at" column="create_at" />
+        <association property="author" javaType="Author">
+            <id property="id" column="author_id" />
+            <result property="name" column="name" />       
+        </association>        
+    </resultMap>
+
+	<!-- 分布查询 -->
+	<select id="findWithAuthor2" resultMap="blogWithAuthor2" parameterType="int" >
+	    select * from blog where id=#{id}
+	</select>
+	<resultMap id="blogWithAuthor2" type="Blog">
+		<association property="author" column="author_id" javaType="Author" select="selectAuthor"/>
+	</resultMap>
+	<select id="selectAuthor" resultType="Author">
+    	select * from author where id=#{id}
+    </select>
+
+
+	<select id="all2" resultMap="blogWithAuthor2" >
+		 select id,title,context,author_id from blog order by id
+	</select>
+
 
 	<select id="find" resultType="Blog" parameterType="int" >
 	    select id,title,context from blog
@@ -15,8 +50,12 @@
 	
 	<insert id="save" parameterType="Blog" useGeneratedKeys="true" keyProperty="id" >
 		insert into blog
-		(title,context,create_at) values(#{title},#{context},#{create_at})
+		(title,context,create_at,author_id) values(#{title},#{context},#{create_at},#{author.id})
 	</insert>
 	
+	<update id="update" parameterType="Blog" >
+        update blog set 
+        title=#{title},context=#{context},create_at=#{create_at},author_id=#{author.id} where id=#{id}
+    </update>
 
 </mapper>

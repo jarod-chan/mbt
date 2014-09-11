@@ -2,8 +2,6 @@ package cn.fyg.mb.domain;
 
 import java.util.Date;
 
-import javax.xml.crypto.Data;
-
 public class Blog {
 	
 	private int id;
@@ -13,6 +11,17 @@ public class Blog {
 	private String context;
 	
 	private Date create_at;
+	
+	private Author author;
+	
+	
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
 
 	public int getId() {
 		return id;
@@ -22,7 +31,6 @@ public class Blog {
 		this.id = id;
 	}
 	
-
 
 	public Date getCreate_at() {
 		return create_at;
