@@ -16,9 +16,9 @@
 		<result property="title" column="title" />
 		<result property="context" column="context" />
 		
-		<collection property="posts" ofType="Post">
-			<id property="id" column="post_id" />
-			<result property="subject" column="post_subject" />
+		<collection property="posts" ofType="Post" columnPrefix="post_">
+			<id property="id" column="id" />
+			<result property="subject" column="subject" />
 		</collection>
 		
 		<collection property="tags" ofType="Tag">

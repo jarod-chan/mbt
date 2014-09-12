@@ -68,6 +68,15 @@ public class BlogTest {
 		H.p(blog);
 	}
 	
+	/*两个一对多，由联合查询获得*/
+	@Test
+	public void find1_N(){
+		List<Blog> find1_N = this.blogMapper.find1_N();
+		for (Blog blog : find1_N) {
+			H.p(blog);
+		}
+	}
+	
 	/*使用分布查询来获得关联对象*/
 	@Test
 	public void findWithAuthor2(){
@@ -84,11 +93,5 @@ public class BlogTest {
 		}
 	}
 	
-	@Test
-	public void find1_N(){
-		List<Blog> find1_N = this.blogMapper.find1_N();
-		for (Blog blog : find1_N) {
-			H.p(blog);
-		}
-	}
+
 }

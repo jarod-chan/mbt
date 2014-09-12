@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.fyg.mb.domain.BlogAction">
+
+	<select id="find1N" resultMap="map1n">
+		select * from blog
+	</select>
+	<resultMap type="Blog" id="map1n">
+		<collection property="posts" javaType="ArrayList" column="id" ofType="Post" select="selectPostsForBlog" />
+	</resultMap>
+	
+	<select id="selectPostsForBlog" resultType="Blog">
+	  select * from post where blog_id = #{id}
+	</select>
+
+</mapper>
