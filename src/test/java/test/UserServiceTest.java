@@ -16,11 +16,15 @@ public class UserServiceTest {
 	@Autowired
 	UserService userService;
 	
+	/**
+	 * 可以显示日志来观察事务控制
+	 */
 	@Test
 	public void testSave(){
 		User user = new User();
 		user.setKey_("test4");
 		user.setRealname("realname4");
+		
 		this.userService.save(user);
 		
 		this.userService.delete(user.getKey_());
