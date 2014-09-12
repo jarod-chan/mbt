@@ -10,13 +10,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import test.common.H;
-
-import cn.fyg.mb.domain.Author;
-import cn.fyg.mb.domain.AuthorMapper;
+import cn.fyg.mb.domain.author.Author;
+import cn.fyg.mb.infrastructure.persistent.AuthorMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class AuthorTest {
+public class AuthorMapperTest {
 	
 	@Autowired
 	AuthorMapper authorMapper;

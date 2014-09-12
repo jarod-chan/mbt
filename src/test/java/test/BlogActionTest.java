@@ -9,9 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import test.common.H;
-
-import cn.fyg.mb.domain.Blog;
-import cn.fyg.mb.domain.BlogAction;
+import cn.fyg.mb.domain.blog.Blog;
+import cn.fyg.mb.infrastructure.persistent.BlogAction;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")

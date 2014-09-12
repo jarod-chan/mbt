@@ -1,9 +1,11 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.infrastructure.persistent;
 
 import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
+import cn.fyg.mb.domain.user.User;
 
 @Repository
 public interface UserMapper {

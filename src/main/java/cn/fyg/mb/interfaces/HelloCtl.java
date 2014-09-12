@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import cn.fyg.mb.domain.UserMapper;
+import cn.fyg.mb.infrastructure.persistent.UserMapper;
 
 @Controller
 public class HelloCtl {

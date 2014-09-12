@@ -10,16 +10,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import test.common.H;
-import cn.fyg.mb.domain.Author;
-import cn.fyg.mb.domain.Blog;
-import cn.fyg.mb.domain.BlogMapper;
+import cn.fyg.mb.domain.author.Author;
+import cn.fyg.mb.domain.blog.Blog;
+import cn.fyg.mb.infrastructure.persistent.BlogMapper;
 
 /**
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class BlogTest {
+public class BlogMapperTest {
 	
 	@Autowired
 	BlogMapper blogMapper;

@@ -1,12 +1,13 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.domain.author;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class Post {
+//作者
+public class Author {
 	
 	private int id;
 	
-	private String subject;
+	private String name;
 
 	public int getId() {
 		return id;
@@ -16,16 +17,17 @@ public class Post {
 		this.id = id;
 	}
 
-	public String getSubject() {
-		return subject;
+	public String getName() {
+		return name;
 	}
 
-	public void setSubject(String subject) {
-		this.subject = subject;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
+
 }

@@ -1,6 +1,6 @@
 package cn.fyg.mb.application;
 
-import cn.fyg.mb.domain.User;
+import cn.fyg.mb.domain.user.User;
 
 public interface UserService {
 	

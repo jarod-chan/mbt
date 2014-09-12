@@ -1,8 +1,10 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.infrastructure.persistent;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
+import cn.fyg.mb.domain.blog.Blog;
 
 @Repository
 public interface BlogMapper {

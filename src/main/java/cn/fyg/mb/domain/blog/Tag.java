@@ -1,4 +1,4 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.domain.blog;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 

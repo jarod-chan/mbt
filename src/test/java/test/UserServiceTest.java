@@ -7,11 +7,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cn.fyg.mb.application.UserService;
-import cn.fyg.mb.domain.User;
+import cn.fyg.mb.domain.user.User;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
-public class TestUserService {
+public class UserServiceTest {
 	
 	@Autowired
 	UserService userService;

@@ -1,4 +1,4 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.domain.user;
 
 public class User {
 	

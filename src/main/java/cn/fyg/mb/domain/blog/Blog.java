@@ -1,7 +1,9 @@
-package cn.fyg.mb.domain;
+package cn.fyg.mb.domain.blog;
 
 import java.util.Date;
 import java.util.List;
+
+import cn.fyg.mb.domain.author.Author;
 
 public class Blog {
 	
