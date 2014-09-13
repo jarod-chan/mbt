@@ -2,11 +2,10 @@ package cn.fyg.mb.infrastructure.persistent;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import cn.fyg.mb.domain.blog.Blog;
+import cn.fyg.mb.infrastructure.persistent.tag.Mapper;
 
-@Repository
+@Mapper
 public interface BlogMapper {
 	
 	Blog find(int id);

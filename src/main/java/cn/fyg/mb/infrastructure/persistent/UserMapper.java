@@ -3,11 +3,10 @@ package cn.fyg.mb.infrastructure.persistent;
 import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import cn.fyg.mb.domain.user.User;
+import cn.fyg.mb.infrastructure.persistent.tag.Mapper;
 
-@Repository
+@Mapper
 public interface UserMapper {
 	
 	public List<HashMap<String,Object>> getAll();
