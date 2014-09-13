@@ -43,4 +43,7 @@ jpa的orm设计，它的出发点是基于领域的设计，用数据库来达�
 即使我们不采用数据库，而采用nosql数据库或者文件来存储你的信息。也同样可以在这一层的做。也就是说它还是符合本身的职责划分的。
 
 
-采用mybatis时，其实很多实现都在xml里面，感觉repository有点重复实现的迹象，在加上service，几个接口有点重复。
+采用mybatis时，其实很多实现都在xml里面，感觉repository有点重复实现的迹象，在加上service，几个接口有点重复?
+当repository实现比较简单时，可以直接通过mybatis的xml来实现它的接口。
+当repository实现比较复杂时，可以通过在infrastructure实现repository再调用mapper以及映射的xml来实现接口。
+
